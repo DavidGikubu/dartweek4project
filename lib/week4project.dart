@@ -61,4 +61,15 @@ void main() {
         print('Unknown animal'); // Print a message for unknown animals
     }
   }
+
+// Demonstrate the use of a loop in a method
+  void printNumbers(int n) {
+    // Loop through numbers from 1 to n and print each number
+    for (var i = 1; i <= n; i++) {
+      print(i);
+    }
+  }
+
+  // Call the method with a loop to print numbers from 1 to 5
+  printNumbers(5);
 }
