@@ -1,0 +1,27 @@
+import 'dart:io';
+
+void generateAnimalFile(String filePath) {
+  // Animal names to be written to the file
+  final List<String> animalNames = ['Dog', 'Cat', 'Lion', 'Tiger', 'Elephant'];
+
+  // Create a new file at the specified path
+  final File file = File(filePath);
+
+  // Open the file for writing (truncate existing content or create new file)
+  final RandomAccessFile raf = file.openSync(mode: FileMode.write);
+
+  // Write each animal name to the file
+  for (final name in animalNames) {
+    raf.writeStringSync('$name\n');
+  }
+
+  // Close the file
+  raf.closeSync();
+
+  print('Animal names have been written to: $filePath');
+}
+
+void main() {
+  final String filePath = 'animals.txt';
+  generateAnimalFile(filePath);
+}
