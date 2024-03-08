@@ -12,6 +12,15 @@ class AnimalBase implements Animal {
   }
 }
 
+// Define a subclass of AnimalBase (inherits makeSound method)
+class Cat extends AnimalBase {
+  // Override the makeSound method to provide a specific implementation for Cat
+  @override
+  void makeSound() {
+    print('Meow');
+  }
+}
+
 // Class to read animal names from a file
 class AnimalFileReader {
   List<String> readDataFromFile(String filePath) {
