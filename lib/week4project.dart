@@ -38,3 +38,27 @@ class AnimalFileReader {
     return ['Dog', 'Cat'];
   }
 }
+
+void main() {
+  // Initialize an instance of AnimalFileReader to read animal names from file
+  final reader = AnimalFileReader();
+
+  // Read animal names from the file (in real-world scenario, it would read from a file)
+  final animalNames = reader.readDataFromFile('animals.txt');
+
+  // Loop through each animal name and create corresponding objects
+  for (final name in animalNames) {
+    switch (name) {
+      case 'Dog':
+        final dog = Dog(); // Create a Dog object
+        dog.makeSound(); // Call the makeSound method of Dog
+        break;
+      case 'Cat':
+        final cat = Cat(); // Create a Cat object
+        cat.makeSound(); // Call the makeSound method of Cat
+        break;
+      default:
+        print('Unknown animal'); // Print a message for unknown animals
+    }
+  }
+}
